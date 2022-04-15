@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   double_linkedlist.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/14 18:34:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/14 18:34:06 by marvin           ###   ########.fr       */
+/*   Created: 2022/04/14 18:34:01 by marvin           #+#    #+#             */
+/*   Updated: 2022/04/14 22:32:11 by marvin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ t_dllnode	*dl_lstnew(void *content)
 	return (head);
 }
 
-/*
-** to add a node in the begining of the list
-** we use addfront
-*/
-
 void	dl_lstaddfro(t_dllnode **head, void *content)
 {
 	t_dllnode	*temp;
@@ -41,11 +36,6 @@ void	dl_lstaddfro(t_dllnode **head, void *content)
 	node->next = temp;
 	temp->prev = node;
 }
-
-/*
-** to add a node in the end of the list
-** we use addback
-*/
 
 void	dl_lstaddbac(t_dllnode **head, void *content)
 {
@@ -73,11 +63,6 @@ void	dl_lstaddbac(t_dllnode **head, void *content)
 	}
 }
 
-/*
-** Iterates the list ’lst’ and applies the function
-** ’f’ to the content of each element.
-*/
-
 void	dl_lstiter(t_dllnode *head, void (*f)(void *))
 {
 	t_dllnode	*i;
@@ -91,13 +76,6 @@ void	dl_lstiter(t_dllnode *head, void (*f)(void *))
 		i = i->next;
 	}
 }
-
-/*
-**	Takes as a parameter an element and frees the
-** memory of the element’s content using the function
-** ’del’ given as a parameter and free the element.
-** The memory of ’next’ must not be freed.
-*/
 
 void	dl_delone(t_dllnode *node, void (*f)(void *))
 {

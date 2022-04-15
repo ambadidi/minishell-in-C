@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 
-LDFLAGS="-L/Users/abadidi/.brew/opt/readline/lib"
-CPPFLAGS="-I/Users/abadidi/.brew/opt/readline/include"
+LDFLAGS="-L/Users/abadidi/goinfre/homebrew/opt/readline/lib"
+CPPFLAGS="-I/Users/abadidi/goinfre/homebrew/opt/readline/include/readline"
 
 SRC = srcs/compile.c\
 		srcs/minishell.c\
@@ -56,7 +56,7 @@ NAME = minishell
 INC = include/*.h
 EXTRALIBFT = libft/libft.a
 #
-READLINE =   -lreadline -L /Users/abadidi/goinfre/abadidi/.brew/opt/readline/lib -I/Users/abadidi/goinfre/abadidi/.brew/opt/readline/include -lreadline
+READLINE =   -lreadline -L /Users/abadidi/goinfre/homebrew/opt/readline/lib -I/Users/abadidi/goinfre/homebrew/opt/readline/include -lreadline
 all: $(NAME)
 
 $(NAME):  $(EXTRALIBFT)
@@ -65,7 +65,7 @@ $(EXTRALIBFT):
 	make all -C libft/
 clean:
 	rm -rf $(OBJ) 
-	
+	make clean -C libft/
 fclean:
 	make fclean -C libft/
 	rm -rf $(OBJ) $(NAME)

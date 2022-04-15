@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: abadidi <abadidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:32:03 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/14 19:17:10 by marvin           ###   ########.fr       */
+/*   Updated: 2022/04/14 22:42:12 by abadidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -296,7 +296,7 @@ t_cmdtable	*cmd_list_creator(t_dllnode *listargs, t_dllnode *listfiles);
 char		**clone_ll_char(t_dllnode *list_args);
 void		after_parser_removequotes(t_dllnode *list_args, t_bash *sh);
 t_dllnode	*wraper_get_redirection(t_bash *sh, char *line, char **remainline);
-char		*extract_args(t_dllnodec*parsed);
+char		*extract_args(t_dllnode *parsed);
 char		*slashify_bkslash_line(char **argsline);
 
 /*
